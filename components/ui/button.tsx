@@ -1,4 +1,4 @@
-import * as React from "react"
+import type * as React from "react"
 import { Slot, Slottable } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -10,7 +10,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-background border-primary text-primary-foreground [&>[data-border]]:bg-primary [box-shadow:inset_0_0_54px_0px_var(--tw-shadow-color)] shadow-[#EBB800] hover:shadow-[#EBB800]/80",
+        default:
+          "bg-background border-[#FF6B5B] text-primary-foreground [&>[data-border]]:bg-[#FF6B5B] [box-shadow:inset_0_0_54px_0px_var(--tw-shadow-color)] shadow-[#FF6B5B] hover:shadow-[#FF6B5B]/80",
       },
       size: {
         default: "h-16 px-6 text-base",
@@ -21,7 +22,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 )
 
 function Button({
@@ -43,19 +44,27 @@ function Button({
 
   return (
     <Comp
-      style={{
-        "--poly-roundness": px(polyRoundness),
-      } as React.CSSProperties}
+      style={
+        {
+          "--poly-roundness": px(polyRoundness),
+        } as React.CSSProperties
+      }
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     >
-      <span data-border="top-left" style={{ "--h": px(hypotenuse), "--hh": px(hypotenuseHalf) } as React.CSSProperties} className="absolute inline-block w-[var(--h)] top-[var(--hh)] left-[var(--hh)] h-[2px] -rotate-45 origin-top -translate-x-1/2" />
-      <span data-border="bottom-right" style={{ "--h": px(hypotenuse), "--hh": px(hypotenuseHalf) } as React.CSSProperties} className="absolute w-[var(--h)] bottom-[var(--hh)] right-[var(--hh)] h-[2px] -rotate-45 translate-x-1/2" />
+      <span
+        data-border="top-left"
+        style={{ "--h": px(hypotenuse), "--hh": px(hypotenuseHalf) } as React.CSSProperties}
+        className="absolute inline-block w-[var(--h)] top-[var(--hh)] left-[var(--hh)] h-[2px] -rotate-45 origin-top -translate-x-1/2"
+      />
+      <span
+        data-border="bottom-right"
+        style={{ "--h": px(hypotenuse), "--hh": px(hypotenuseHalf) } as React.CSSProperties}
+        className="absolute w-[var(--h)] bottom-[var(--hh)] right-[var(--hh)] h-[2px] -rotate-45 translate-x-1/2"
+      />
 
-      <Slottable>
-        {children}
-      </Slottable>
+      <Slottable>{children}</Slottable>
     </Comp>
   )
 }

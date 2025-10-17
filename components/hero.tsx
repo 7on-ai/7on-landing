@@ -11,8 +11,19 @@ import { px } from "./utils"
 
 export function Hero() {
   const [hovering, setHovering] = useState(false)
+
+  const handleBackgroundClick = (e: React.MouseEvent) => {
+    // Only trigger if clicking on the background div itself, not its children
+    if (e.target === e.currentTarget) {
+      setHovering(true)
+      setTimeout(() => setHovering(false), 1000)
+    }
+  }
+  // </CHANGE>
+
   return (
-    <div className="flex flex-col h-svh justify-between">
+    <div className="flex flex-col h-svh justify-between cursor-pointer" onClick={handleBackgroundClick}>
+      {/* </CHANGE> */}
       <GL hovering={hovering} />
 
       <div className="pb-16 mt-auto text-center relative">

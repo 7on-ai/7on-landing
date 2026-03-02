@@ -6,10 +6,9 @@ export const Header = () => {
     <div className="fixed z-50 pt-8 md:pt-14 top-0 left-0 w-full">
       <header className="flex items-center justify-center container">
         <Link href="/">
-          <Logo className="w-[100px] md:w-[120px]" />
+          <Logo className="w-[48px] md:w-[60px]" />
         </Link>
       </header>
-      {/* </CHANGE> */}
     </div>
   )
 }

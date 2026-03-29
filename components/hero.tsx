@@ -31,8 +31,8 @@ export function Hero() {
           <CallNeoButton className="mb-6" />
         </Link>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient">
-          Unlock your <br />
-          <i className="font-light">future</i> growth
+          The one who <br />
+          <i className="font-light">actually</i> knows you
         </h1>
         <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
           Welcome to the era of having your own Jarvis

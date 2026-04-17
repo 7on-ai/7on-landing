@@ -26,7 +26,7 @@ export function Hero() {
         muted
         loop
         playsInline
-        className="fixed top-0 left-0 w-full h-full object-cover z-0"
+        className="fixed top-0 left-0 w-full h-full object-cover object-left sm:object-center z-0"
       >
         <source src="/bg-hero.mp4" type="video/mp4" />
       </video>

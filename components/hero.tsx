@@ -3,7 +3,6 @@
 import type React from "react"
 
 import Link from "next/link"
-import { GL } from "./gl"
 import { Button } from "./ui/button"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
@@ -13,20 +12,29 @@ export function Hero() {
   const [hovering, setHovering] = useState(false)
 
   const handleBackgroundClick = (e: React.MouseEvent) => {
-    // Only trigger if clicking on the background div itself, not its children
     if (e.target === e.currentTarget) {
       setHovering(true)
       setTimeout(() => setHovering(false), 1000)
     }
   }
-  // </CHANGE>
 
   return (
     <div className="flex flex-col h-svh justify-between cursor-pointer" onClick={handleBackgroundClick}>
-      {/* </CHANGE> */}
-      <GL hovering={hovering} />
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="fixed top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src="/bg-hero.mp4" type="video/mp4" />
+      </video>
 
-      <div className="pb-16 mt-auto text-center relative">
+      {/* Dark overlay for readability */}
+      <div className="fixed top-0 left-0 w-full h-full bg-black/40 z-0" />
+
+      <div className="pb-16 mt-auto text-center relative z-10">
         <Link href="https://neo.7on.ai" target="_blank" rel="noopener noreferrer">
           <CallNeoButton className="mb-6" />
         </Link>

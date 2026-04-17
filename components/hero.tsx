@@ -43,7 +43,7 @@ export function Hero() {
           <i className="font-light">who actually</i> knows you <br />
         </h1>
         <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
-          Truly yours — Always awake — Never forgets
+          Always awake — Never forgets — Truly yours
         </p>
 
         <Link className="contents max-sm:hidden" href="https://join.7on.ai" target="_blank" rel="noopener noreferrer">

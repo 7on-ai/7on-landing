@@ -62,7 +62,6 @@ body {
   position: fixed;
   height: 100svh;
   width: 100%;
-  z-index: 2; /* above video (z-0) and dark overlay (z-1) */
 }
 
 #webgl canvas {

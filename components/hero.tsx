@@ -3,6 +3,7 @@
 import type React from "react"
 
 import Link from "next/link"
+import { GL } from "./gl"
 import { Button } from "./ui/button"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
@@ -20,7 +21,8 @@ export function Hero() {
 
   return (
     <div className="flex flex-col h-svh justify-between cursor-pointer" onClick={handleBackgroundClick}>
-      {/* Video Background */}
+
+      {/* Video Background — z-0 */}
       <video
         autoPlay
         muted
@@ -31,9 +33,13 @@ export function Hero() {
         <source src="/bg-hero.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay for readability */}
-      <div className="fixed top-0 left-0 w-full h-full bg-black/40 z-0" />
+      {/* Dark overlay — z-[1] */}
+      <div className="fixed top-0 left-0 w-full h-full bg-black/40 z-[1]" />
 
+      {/* GL Particles — z-[2] via #webgl in globals.css, sits above video */}
+      <GL hovering={hovering} />
+
+      {/* Content — z-10 */}
       <div className="pb-16 mt-auto text-center relative z-10">
         <Link href="https://neo.7on.ai" target="_blank" rel="noopener noreferrer">
           <CallNeoButton className="mb-6" />

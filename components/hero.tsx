@@ -40,10 +40,9 @@ export function Hero() {
         </Link>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient">
           The one <br />
-          <i className="font-light">who actually</i> knows you
+          <i className="font-light">who actually</i> knows you <br />
         </h1>
         <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
-         <br />
           Truly yours — Always awake — Never forgets
         </p>
 

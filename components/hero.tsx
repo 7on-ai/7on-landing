@@ -43,7 +43,7 @@ export function Hero() {
           <i className="font-light">actually</i> knows you
         </h1>
         <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
-          Welcome to the era of having your own Jarvis
+          Truly yours — Always awake — Never forgets
         </p>
 
         <Link className="contents max-sm:hidden" href="https://join.7on.ai" target="_blank" rel="noopener noreferrer">
